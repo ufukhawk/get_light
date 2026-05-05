@@ -8,7 +8,7 @@
 /// - **Simple State Management**: `GetBuilder`, `GetxController`
 /// - **Dependency Injection**: `Get.put()`, `Get.find()`, `Get.lazyPut()`
 /// - **Workers**: `ever`, `once`, `interval`, `debounce`
-library getx_lite;
+library get_light;
 
 // Core
 export 'src/core/get_interface.dart';

@@ -1,10 +1,10 @@
-name: getx_lite
+name: get_light
 description: Lightweight state management solution for Flutter, extracted from GetX.
   Provides reactive state management (Obx, .obs), simple state management (GetBuilder),
   GetxController, and dependency injection - all without routing or utility dependencies.
 version: 1.0.0
-homepage: https://github.com/example/getx_lite
-repository: https://github.com/example/getx_lite
+homepage: https://github.com/example/get_light
+repository: https://github.com/example/get_light
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

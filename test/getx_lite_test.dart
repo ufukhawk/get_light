@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:getx_lite/getx_lite.dart';
+import 'package:get_light/getx_lite.dart';
 
 // ============================================================
 // Reactive Types Tests

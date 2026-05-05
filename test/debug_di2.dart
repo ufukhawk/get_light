@@ -1,4 +1,4 @@
-import 'package:getx_lite/src/di/dependency_injection.dart';
+import 'package:get_light/src/di/dependency_injection.dart';
 
 void main() {
   final di = GetInstance();
