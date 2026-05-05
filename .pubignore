@@ -1,0 +1,12 @@
+tmp/
+build/
+*.iml
+.idea/
+test/debug_*.dart
+example/android/
+example/ios/
+example/macos/
+example/build/
+example/.dart_tool/
+example/.idea/
+example/*.iml
