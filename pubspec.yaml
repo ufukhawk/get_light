@@ -1,0 +1,21 @@
+name: getx_lite
+description: Lightweight state management solution for Flutter, extracted from GetX.
+  Provides reactive state management (Obx, .obs), simple state management (GetBuilder),
+  GetxController, and dependency injection - all without routing or utility dependencies.
+version: 1.0.0
+homepage: https://github.com/example/getx_lite
+repository: https://github.com/example/getx_lite
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
