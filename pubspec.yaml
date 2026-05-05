@@ -1,8 +1,7 @@
 name: get_light
 description: >-
-  Lightweight Flutter state management and dependency injection extracted from GetX.
-  Includes reactive variables (.obs, Obx), simple state (GetBuilder, GetxController),
-  DI (Get.put / Get.find / lazyPut), and workers (ever, once, debounce, interval).
+  Lightweight Flutter state management and dependency injection from GetX,
+  with reactive variables, simple state, dependency injection, and worker utilities.
 version: 1.0.1
 homepage: https://github.com/ufukhawk/get_light
 repository: https://github.com/ufukhawk/get_light
