@@ -1,7 +1,7 @@
 import 'package:getx_lite/src/di/dependency_injection.dart';
 
 void main() {
-  final di = GetContainer();
+  final di = GetInstance();
   print('Before: isRegistered=${di.isRegistered<String>()}');
   final result = di.put<String>('hello');
   print('After put: result=$result');

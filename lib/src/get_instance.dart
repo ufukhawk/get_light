@@ -12,7 +12,7 @@ export 'di/dependency_injection.dart' show InstanceInfo, InstanceBuilderCallback
 /// final controller = Get.find<MyController>();
 /// ```
 class GetImpl extends GetInterface {
-  final _di = GetContainer();
+  final _di = GetInstance();
 
   /// Dependency injection methods.
 

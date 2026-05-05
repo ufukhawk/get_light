@@ -69,7 +69,7 @@ class _InstanceBuilderFactory<S> {
 // GetInstance - The DI container
 // ============================================================
 
-class GetContainer {
+class GetInstance {
   /// Holds references to every registered Instance when using Get.put()
   static final Map<String, _InstanceBuilderFactory> _singl = {};
 
