@@ -2,7 +2,7 @@ name: get_light
 description: >-
   Lightweight Flutter state management and dependency injection from GetX,
   with reactive variables, simple state, dependency injection, and worker utilities.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/ufukhawk/get_light
 repository: https://github.com/ufukhawk/get_light
 issue_tracker: https://github.com/ufukhawk/get_light/issues

@@ -1,3 +1,10 @@
+## 1.0.2
+
+- Fixed package metadata for pub.dev verification.
+- Shortened `pubspec.yaml` description to meet pub.dev length guidelines.
+- Removed duplicate nested package copy from `tmp/getx_lite` and added `tmp/` to `.gitignore`.
+- Confirmed repository URL and package name consistency.
+
 ## 1.0.0
 
 Initial release.
