@@ -25,21 +25,21 @@ class GetImpl extends GetInterface {
   void create<S>(InstanceBuilderCallback<S> builder, {String? tag, bool permanent = true}) =>
       _di.create(builder, tag: tag, permanent: permanent);
 
-  S find<S>({String? tag}) => _di.find(tag: tag);
-  S? findOrNull<S>({String? tag}) => _di.findOrNull(tag: tag);
+  S find<S>({String? tag}) => _di.find<S>(tag: tag);
+  S? findOrNull<S>({String? tag}) => _di.findOrNull<S>(tag: tag);
 
-  bool isRegistered<S>({String? tag}) => _di.isRegistered(tag: tag);
-  bool isPrepared<S>({String? tag}) => _di.isPrepared(tag: tag);
+  bool isRegistered<S>({String? tag}) => _di.isRegistered<S>(tag: tag);
+  bool isPrepared<S>({String? tag}) => _di.isPrepared<S>(tag: tag);
 
   bool delete<S>({String? tag, String? key, bool force = false}) =>
-      _di.delete(tag: tag, key: key, force: force);
+      _di.delete<S>(tag: tag, key: key, force: force);
 
   void deleteAll({bool force = false}) => _di.deleteAll(force: force);
-  void reload<S>({String? tag, bool force = false}) => _di.reload(tag: tag, force: force);
+  void reload<S>({String? tag, bool force = false}) => _di.reload<S>(tag: tag, force: force);
   void reloadAll({bool force = false}) => _di.reloadAll(force: force);
-  void replace<P>(P child, {String? tag}) => _di.replace(child, tag: tag);
+  void replace<P>(P child, {String? tag}) => _di.replace<P>(child, tag: tag);
 
-  InstanceInfo getInstanceInfo<S>({String? tag}) => _di.getInstanceInfo(tag: tag);
+  InstanceInfo getInstanceInfo<S>({String? tag}) => _di.getInstanceInfo<S>(tag: tag);
 
   /// Internal log method.
   void logMsg(String msg, {bool isError = false}) {

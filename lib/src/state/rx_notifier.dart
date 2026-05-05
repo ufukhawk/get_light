@@ -38,22 +38,14 @@ class GetListenable<T> extends ListNotifierSingle<T> implements RxInterface<T> {
 
   StreamController<T> get subject {
     if (_controller == null) {
-      _controller = StreamController<T>.broadcast(
-        onCancel: addListener(_streamListener),
-      );
-      _controller?.add(_value);
+      _controller = StreamController<T>.broadcast(sync: true);
     }
     return _controller!;
-  }
-
-  void _streamListener() {
-    _controller?.add(_value);
   }
 
   @override
   @mustCallSuper
   void close() {
-    removeListener(_streamListener);
     _controller?.close();
     dispose();
   }
@@ -75,14 +67,10 @@ class GetListenable<T> extends ListNotifierSingle<T> implements RxInterface<T> {
     return _value;
   }
 
-  void _notify() {
-    refresh();
-  }
-
   set value(T newValue) {
     if (_value == newValue) return;
     _value = newValue;
-    _notify();
+    refresh();
     _controller?.add(_value);
   }
 
@@ -99,13 +87,22 @@ class GetListenable<T> extends ListNotifierSingle<T> implements RxInterface<T> {
     Function? onError,
     void Function()? onDone,
     bool? cancelOnError,
-  }) =>
-      stream.listen(
-        onData,
-        onError: onError,
-        onDone: onDone,
-        cancelOnError: cancelOnError ?? false,
-      );
+  }) {
+    final ctrl = StreamController<T>(sync: true);
+    final cancel = addListener(() {
+      if (!ctrl.isClosed) ctrl.add(_value);
+    });
+    ctrl.onCancel = () {
+      cancel();
+      ctrl.close();
+    };
+    return ctrl.stream.listen(
+      onData,
+      onError: onError,
+      onDone: onDone,
+      cancelOnError: cancelOnError ?? false,
+    );
+  }
 
   @override
   String toString() => value.toString();

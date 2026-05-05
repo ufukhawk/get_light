@@ -85,7 +85,7 @@ class RxString extends Rx<String> {
 // ============================================================
 
 class RxList<E> extends Rx<List<E>> implements List<E> {
-  RxList([List<E> initial = const []]) : super(initial);
+  RxList([List<E>? initial]) : super(initial ?? <E>[]);
 
   @override E get first => value.first;
   @override set first(E val) { value.first = val; refresh(); }
@@ -155,7 +155,7 @@ class RxList<E> extends Rx<List<E>> implements List<E> {
 // ============================================================
 
 class RxMap<K, V> extends Rx<Map<K, V>> implements Map<K, V> {
-  RxMap([Map<K, V> initial = const {}]) : super(initial);
+  RxMap([Map<K, V>? initial]) : super(initial ?? <K, V>{});
 
   @override void addAll(Map<K, V> other) { value.addAll(other); refresh(); }
   @override void addEntries(Iterable<MapEntry<K, V>> entries) { value.addEntries(entries); refresh(); }
@@ -185,7 +185,7 @@ class RxMap<K, V> extends Rx<Map<K, V>> implements Map<K, V> {
 // ============================================================
 
 class RxSet<E> extends Rx<Set<E>> implements Set<E> {
-  RxSet([Set<E> initial = const {}]) : super(initial);
+  RxSet([Set<E>? initial]) : super(initial ?? <E>{});
 
   @override bool add(E element) { final r = value.add(element); if (r) refresh(); return r; }
   @override void addAll(Iterable<E> elements) { value.addAll(elements); refresh(); }
